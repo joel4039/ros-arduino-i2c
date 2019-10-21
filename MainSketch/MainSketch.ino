@@ -46,7 +46,7 @@ void loop()
 }
 
 void startWiFi(){
-  WiFi.begin("Galvatron-IOT", "85134444");
+  WiFi.begin("SSID", "PASSWORD");
 
   while (WiFi.status() != WL_CONNECTED)
   {
@@ -54,7 +54,7 @@ void startWiFi(){
     delay(500);
     digitalWrite(blueLedPin, HIGH);
     delay(500);
-  }  
+  }
   digitalWrite(blueLedPin, LOW);
 }
 
@@ -105,7 +105,7 @@ void checkAddresses(){
         Serial.print("0");
       }
       Serial.println(address,HEX);
-    }    
+    }
   }
   if (nDevices == 0) {
     Serial.println("No I2C devices found\n");
@@ -113,5 +113,5 @@ void checkAddresses(){
   else {
     Serial.println("done\n");
   }
-  delay(5000);          
+  delay(5000);
 }
