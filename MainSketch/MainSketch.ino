@@ -25,7 +25,6 @@ void setup()
 {
   Serial.begin(9600);
   Wire.begin(4,5);
-  Serial.println("test");
   startWiFi();
 //  ArduinoOTA.begin();
   nh.getHardware()->setConnection(server, serverPort);
