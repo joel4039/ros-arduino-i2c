@@ -21,10 +21,6 @@ const int blueLedPin = 2; // Onboard LED = digital pin 0 (blue LED on ESP8266)
 //Set up the ros subscribers for both motor controllers
 ros::Subscriber <geometry_msgs::Twist> sub("/cmd_vel", &onTwist);
 
-
-std_msgs::String str_msg;
-ros::Publisher chatter("/chatter", &str_msg);
-
 void setup()
 {
   Serial.begin(9600);
@@ -39,7 +35,6 @@ void setup()
   checkAddresses();
 }
 
-char hello[13] = "hello world!";
 void loop()
 {
   nh.spinOnce();
